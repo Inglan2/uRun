@@ -1,7 +1,7 @@
 window.addEventListener(
     "message",
     (event) => {
-        alert()
+        eval(event.data)
     },
     false,
 );
@@ -13,4 +13,8 @@ function openWin() {
     `)
 }
 
-document.querySelector("body").outerHTML = "<button onclick='openWin()'></button>"
+window.addEventListener("keydown", event => {
+    if (event.ctrlKey && event.which === 192) {
+        openWin()
+    }
+  })
