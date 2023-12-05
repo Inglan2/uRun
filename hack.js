@@ -1,3 +1,4 @@
+/// popup.js
 window.addEventListener(
     "message",
     (event) => {
@@ -17,4 +18,4 @@ window.addEventListener("keydown", event => {
     if (event.ctrlKey && event.which === 192) {
         openWin()
     }
-  })
+})
