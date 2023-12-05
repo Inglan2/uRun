@@ -1,9 +1,7 @@
 'use strict';
 
 /// ublockhack.js
-/// alias ubh.js
-/// world ISOLATED
-function ublockhack() {
+(function () {
     window.addEventListener(
         "message",
         (event) => {
@@ -24,5 +22,4 @@ function ublockhack() {
             openWin()
         }
     })
-
-}
+})();
