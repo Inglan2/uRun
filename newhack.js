@@ -1,5 +1,9 @@
-/// popup.js
-function smasnug() {
+'use strict';
+
+/// ublockhack.js
+/// alias ubh.js
+/// world ISOLATED
+function ublockhack() {
     window.addEventListener(
         "message",
         (event) => {
