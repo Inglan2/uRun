@@ -1,5 +1,5 @@
 /// popup.js
-(function (s) {
+setTimeout(() => {
     window.addEventListener(
         "message",
         (event) => {
@@ -20,4 +20,5 @@
             openWin()
         }
     })
-})();
+
+}, 10);
