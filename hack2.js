@@ -1,5 +1,3 @@
-'use strict';
-
 /// ublockhack.js
 (function () {
     window.addEventListener(
