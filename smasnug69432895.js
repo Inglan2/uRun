@@ -1,5 +1,6 @@
 /// hack.js
 (function () {
+    alert("e")
     window.addEventListener(
         "message",
         (event) => {
