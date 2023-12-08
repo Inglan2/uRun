@@ -8,6 +8,7 @@ window.addEventListener("keyup", event => {
             if (win.name != oldname) {
                 alert("window name changed to " + win.name);
                 oldname = win.name;
+                
             }
         }, 1);
     }
