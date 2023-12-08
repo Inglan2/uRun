@@ -8,10 +8,9 @@
         false,
     );
 
-    window.addEventListener("keydown", event => {
-        if (event.ctrlKey && event.which === 192) {
-            window.open('', '', 'width=200,height=100');
+    window.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && e.keyCode == 91) {
+            window.open('https://example.com', '', 'width=200,height=100');
         }
-    })
-
+     })
 })()
