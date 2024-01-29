@@ -11,9 +11,8 @@
     <button onclick="sendMessage()">Send Message</button>
     <script>
         function sendMessage() {
-            window.name = "javascript:alert()"
+            window.parent.postMessage('Hello from iframe!', '*');
         }
-
     </script>
 </body>
 
