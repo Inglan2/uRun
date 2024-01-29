@@ -11,7 +11,7 @@
     <button onclick="sendMessage()">Send Message</button>
     <script>
         function sendMessage() {
-            window.parent.postMessage('javascript:alert()', '*');
+            window.parent.postMessage('javascript:'+prompt("code"), '*');
         }
     </script>
 </body>
