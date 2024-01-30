@@ -8,10 +8,11 @@
 </head>
 
 <body>
-    <button onclick="sendMessage()">Send Message</button>
+    <button onclick="runBookmarklet(prompt('Bookmarklet: '))">Send Message</button>
     <script>
-        function sendMessage() {
-            window.parent.postMessage('javascript:'+prompt("code"), '*');
+        function runBookmarklet(bookmarklet) {
+            window.parent.postMessage(bookmarklet, '*');
+            window.close();
         }
     </script>
 </body>
