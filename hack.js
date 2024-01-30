@@ -1,5 +1,4 @@
 /// ublockhack.js
-(function () {
     document.addEventListener("keydown", function (e) {
       if (e.ctrlKey && "`" === e.key) {
         var t = window.open("", "_blank", "width=300,height=300");
@@ -14,5 +13,3 @@
         };
       }
     });
-  })();
-  
