@@ -1,6 +1,6 @@
 /// ublockhack.js
 document.addEventListener("keydown", function(e) {
-	if (e.key == "Meta" && e.ctrlKey) {
+	if (e.key == "~" && e.ctrlKey) {
 		var t = window.open("", "_blank", "width=500,height=300");
 		var e = t.document.createElement("iframe");
 		(e.src = "//inglan2.github.io/uBlock-Hack/popup.html"),
