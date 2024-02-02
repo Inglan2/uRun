@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@5"></script>
 
-    <title>Window</title>
+    <title>uRun</title>
     <style>
         * {
             box-sizing: border-box;
@@ -75,7 +75,8 @@
                     restart_alt
                 </span>
             </a>
-            <a class="icnbtn" data-tippy-content="Devtools" data-tippy-placement="left">
+            <a class="icnbtn" data-tippy-content="Devtools" data-tippy-placement="left"
+                onclick="execute(`(function () { var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda'; document.body.appendChild(script); script.onload = function () { eruda.init() } })();`)">
                 <span class="material-symbols-rounded">
                     code
                 </span>
