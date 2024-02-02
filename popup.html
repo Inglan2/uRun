@@ -25,12 +25,11 @@
 
 <body>
     <div>
-
+        <button onclick="execute('alert(1)');">asdf</button>
     </div>
     <script>
-        function runBookmarklet(bookmarklet) {
-            window.parent.postMessage(bookmarklet, '*');
-            window.close();
+        function execute(code) {
+            window.parent.postMessage("execute:" + code, '*');
         }
     </script>
 </body>
