@@ -91,7 +91,9 @@
         function execute(code) {
             window.parent.postMessage("execute:" + code, '*');
         }
-        tippy('[data-tippy-content]');
+        tippy('[data-tippy-content]', {
+            arrow: false
+        });
 
     </script>
 </body>
