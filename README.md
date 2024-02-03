@@ -6,6 +6,7 @@ Recently Google, cracked down on bookmarklets and now they don't work (Its based
 ## Installation
 1. Open uBlock settings
 2. Enable advanced settings, and click the gear ⚙️ button
+> ![image](https://github.com/Inglan2/uRun/assets/117789688/e7d21961-4d76-45a8-afe1-f97479763928)
 
 > [!CAUTION]
 > DO MODIFY ANYTHING ELSE ON THIS PAGE, UNLESS YOU KNOW WHAT YOU ARE DOING (you probably don't), AS YOU COULD BREAK SOMETHING.
@@ -13,7 +14,6 @@ Recently Google, cracked down on bookmarklets and now they don't work (Its based
 > [!TIP]
 > If you mess up, go to the home of settings and at the bottom click reset to default settings
 
-> ![image](https://github.com/Inglan2/uRun/assets/117789688/e7d21961-4d76-45a8-afe1-f97479763928)
 3. Add the script
 > Change
 > ```
