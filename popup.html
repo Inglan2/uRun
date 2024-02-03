@@ -15,9 +15,6 @@
             box-sizing: border-box;
             user-select: none;
             transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-            /* easeInOutCirc */
-
-
         }
 
         flexgrow {
@@ -184,8 +181,8 @@
                     restart_alt
                 </span>
             </a>
-            <a class="icnbtn" data-tippy-content="Execute" data-tippy-placement="left"
-                onclick="execute(prompt('Code:'))">
+            <a class="icnbtn" data-tippy-content="Devtools" data-tippy-placement="left"
+                onclick="execute(`(function () { var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda'; document.body.appendChild(script); script.onload = function () { eruda.init() } })();`)">
                 <span class="material-symbols-rounded">
                     code
                 </span>
@@ -328,7 +325,6 @@
         tippy('[data-tippy-content]', {
             arrow: false
         });
-
     </script>
 </body>
 
