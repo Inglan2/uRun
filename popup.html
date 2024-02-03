@@ -119,21 +119,50 @@
             </a>
         </div>
         <div class="scriptcontainer">
-            <div class="script">
-                <div class="scriptname">Script</div>
-                <a class="icnbtn" data-tippy-content="Delete" data-tippy-placement="left">
-                    <span class="material-symbols-rounded">
-                        delete
-                    </span>
-                </a>
-
-            </div>
         </div>
     </main>
     <script>
         function execute(code) {
             window.parent.postMessage("execute:" + code, '*');
         }
+        
+        function addScript(scriptName, code) {
+            var script = document.createElement("div");
+            script.classList.add("script");
+
+            var scriptNameDiv = document.createElement("div");
+            scriptNameDiv.classList.add("scriptname");
+            scriptNameDiv.textContent = scriptName;
+            script.appendChild(scriptNameDiv);
+            scriptNameDiv.onclick = function () {
+                execute(code);
+            };
+
+            var icnbtn = document.createElement("a");
+            icnbtn.classList.add("icnbtn");
+            icnbtn.dataset.tippyContent = "Delete";
+            icnbtn.dataset.tippyPlacement = "left";
+
+            var materialSpan = document.createElement("span");
+            materialSpan.classList.add("material-symbols-rounded");
+            materialSpan.textContent = "delete";
+
+            icnbtn.appendChild(materialSpan);
+            script.appendChild(icnbtn);
+
+            document.querySelector(".scriptcontainer").appendChild(script);
+            tippy('[data-tippy-content]', {
+                arrow: false
+            });
+
+        }
+
+
+        tippy('[data-tippy-content]', {
+            arrow: false
+        });
+
+
         tippy('[data-tippy-content]', {
             arrow: false
         });
