@@ -179,6 +179,7 @@
         function execute(code) {
             window.parent.postMessage("execute:" + code, '*');
         }
+        // scripts list functions
         function init() {
             if (localStorage.getItem("scripts")) {
                 var scripts = JSON.parse(localStorage.getItem("scripts"));
