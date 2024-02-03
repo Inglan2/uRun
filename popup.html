@@ -125,7 +125,22 @@
         function execute(code) {
             window.parent.postMessage("execute:" + code, '*');
         }
-        
+        function init() {
+            if (localStorage.getItem("scripts")) {
+                var scripts = JSON.parse(localStorage.getItem("scripts"));
+                for (var i = 0; i < scripts.length; i++) {
+                    addScript(scripts[i].name, scripts[i].code);
+                }
+            } else {
+                localStorage.setItem("scripts", JSON.stringify([]));
+            }
+        }
+
+        function reloadScripts() {
+            document.querySelector(".scriptcontainer").innerHTML = "";
+            var scripts = JSON.parse(localStorage.getItem("scripts"));
+            init()
+        }
         function addScript(scriptName, code) {
             var script = document.createElement("div");
             script.classList.add("script");
@@ -142,6 +157,9 @@
             icnbtn.classList.add("icnbtn");
             icnbtn.dataset.tippyContent = "Delete";
             icnbtn.dataset.tippyPlacement = "left";
+            icnbtn.onclick = function () {
+                deleteScript(scriptName);
+            };
 
             var materialSpan = document.createElement("span");
             materialSpan.classList.add("material-symbols-rounded");
@@ -151,17 +169,34 @@
             script.appendChild(icnbtn);
 
             document.querySelector(".scriptcontainer").appendChild(script);
-            tippy('[data-tippy-content]', {
-                arrow: false
-            });
 
+        }
+        function saveScript(scriptName, code) {
+            var scripts = JSON.parse(localStorage.getItem("scripts"));
+            scripts.push({ name: scriptName, code: code });
+            localStorage.setItem("scripts", JSON.stringify(scripts));
+            reloadScripts()
+        }
+
+        function deleteScript(scriptName) {
+            var scripts = JSON.parse(localStorage.getItem("scripts"));
+            for (var i = 0; i < scripts.length; i++) {
+                if (scripts[i].name == scriptName) {
+                    scripts.splice(i, 1);
+                    break;
+                }
+            }
+            localStorage.setItem("scripts", JSON.stringify(scripts));
+            reloadScripts()
+        }
+
+        function resetScripts() {
+            localStorage.setItem("scripts", JSON.stringify([]));
         }
 
 
-        tippy('[data-tippy-content]', {
-            arrow: false
-        });
 
+        init();
 
         tippy('[data-tippy-content]', {
             arrow: false
