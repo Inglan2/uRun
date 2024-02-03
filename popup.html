@@ -93,6 +93,43 @@
             padding: 10px;
             cursor: pointer;
         }
+
+        .editorpopup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(5px);
+
+        }
+
+        .editorcontainer {
+            width: 95%;
+            height: 90%;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .editor {
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        .icnbtnrow {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            padding: 5px;
+
+        }
     </style>
 </head>
 
@@ -121,6 +158,23 @@
         <div class="scriptcontainer">
         </div>
     </main>
+    <div class="editorpopup">
+        <div class="editorcontainer">
+            <div class="editor"></div>
+            <div class="icnbtnrow">
+                <a class="icnbtn" data-tippy-content="Save Script" data-tippy-placement="top">
+                    <span class="material-symbols-rounded">
+                        save
+                    </span>
+                </a>
+                <a class="icnbtn" data-tippy-content="Delete Script" data-tippy-placement="top">
+                    <span class="material-symbols-rounded">
+                        delete
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
     <script>
         function execute(code) {
             window.parent.postMessage("execute:" + code, '*');
