@@ -32,3 +32,45 @@ Recently Google, cracked down on bookmarklets and now they don't work (Its based
 
 ## Usage
 Simply press Ctrl + Shift + \` to open the menu and from there you can run and create scripts. To add a script, press the ➕ button up the top right, and enter the code you would like to add (without the `javascript:` part).
+
+## My favourite bookmarklets
+Edit Page:
+```
+document.designMode=(document.designMode=="on"?%22off%22:%22on%22);void%200;
+```
+What is this site built with (Wappalyzer):
+```
+window.open('https://wappalyzer.com/lookup/'+location.host, '', "width=500,height=600")
+```
+WebXRay Goggles (Page Editor):
+```
+(function(){var a=document.createElement("script");a.src="https://x-ray-goggles.mouse.org/webxray.js";a.className="webxray";a.setAttribute("data-lang","en-US");a.setAttribute("data-baseuri","https://x-ray-goggles.mouse.org");document.body.appendChild(a);}());
+```
+Wayback Machine (Archive.org):
+```
+location.href='https://web.archive.org/web/*/'+location.href
+```
+Cookie Editor:
+```
+(function()%7Bvar%20scriptTag%20%3D%20document.createElement('script')%3BscriptTag.setAttribute('src'%2C%20'https%3A%2F%2Frawgit.com%2Fvbachevhx%2Fcookie-bookmarklet%2Fmaster%2Fdist%2Fcookie_bookmarklet.js')%3Bdocument.body.appendChild(scriptTag)%3B%7D)()
+```
+Youtube Unblock:
+```
+(function () {if (window.location.toString().includes('www.youtube.com/watch?v%27))%20{%20window.open(%27https://www.youtube-nocookie.com/embed/%27%20+%20window.location.toString().split(%27=%27)[1])%20}})()
+```
+Resize:
+```
+void((function(d){if(self!=top||d.getElementById('toolbar')&&d.getElementById('toolbar').getAttribute('data-resizer'))return false;d.write('<!DOCTYPE HTML><html style="opacity:0;"><head><meta charset="utf-8"/></head><body><a data-viewport="320x480" data-icon="mobile">Mobile (e.g. Apple iPhone)</a><a data-viewport="320x568" data-icon="mobile" data-version="5">Apple iPhone 5</a><a data-viewport="375%C3%97667" data-icon="mobile" data-version="7">Apple iPhone 7</a><a data-viewport="414%C3%97736" data-icon="mobile" data-version="7+">Apple iPhone 7 Plus</a><a data-viewport="600x800" data-icon="small-tablet">Small Tablet</a><a data-viewport="768x1024" data-icon="tablet">Tablet (e.g. Apple iPad 2-3rd, mini)</a><a data-viewport="1280x800" data-icon="notebook">Widescreen</a><a data-viewport="1920%C3%971080" data-icon="tv">HDTV 1080p</a><script src="https://lab.maltewassermann.com/viewport-resizer/resizer.min.js"></script></body></html>')})(document));
+```
+Disable Tab Close:
+```
+(function () {window.onbeforeunload = function() { return 1; };})()
+```
+Share to classroom:
+```
+window.open(`https://classroom.google.com/share?url=${location}`,%20%22classroom%22,%20%22width=300,height=300%22)
+```
+[INGOT](https://github.com/3kh0/ext-remover?tab=readme-ov-file#ingot):
+```
+(function () {var a = document.createElement('script');a.src = 'https://cdn.jsdelivr.net/gh/FogNetwork/Ingot/ingot.min.js';document.body.appendChild(a);}())
+```
