@@ -29,3 +29,6 @@ Recently Google, cracked down on bookmarklets and now they don't work (Its based
 > ```
 > *##+js(urun.js)
 > ```
+
+## Usage
+Simply press Ctrl + Shift + \` to open the menu and from there you can run and create scripts. To add a script, press the ➕ button up the top right, and enter the code you would like to add (without the `javascript:` part).
