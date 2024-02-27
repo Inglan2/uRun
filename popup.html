@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <script src="https://unpkg.com/popper.js@1"></script>
-    <script src="https://unpkg.com/tippy.js@5"></script>
-
-    <title>uRun</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@5"></script>
+  <title>uRun</title>
+  <style>
         * {
             box-sizing: border-box;
             user-select: none;
@@ -168,55 +165,28 @@
         .editorpopup.hide {
             transform: translate(0, 100%);
         }
-    </style>
+  </style>
 </head>
-
 <body>
-    <main>
-        <div class="topbar">
-            uRun
-            <flexgrow></flexgrow>
-            <a class="icnbtn" data-tippy-content="Reset" data-tippy-placement="left" onclick="resetScripts()">
-                <span class="material-symbols-rounded">
-                    restart_alt
-                </span>
-            </a>
-            <a class="icnbtn" data-tippy-content="Devtools" data-tippy-placement="left"
-                onclick="execute(`(function () { var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda'; document.body.appendChild(script); script.onload = function () { eruda.init() } })();`)">
-                <span class="material-symbols-rounded">
-                    code
-                </span>
-            </a>
-            <a class="icnbtn" data-tippy-content="Add Script" data-tippy-placement="left" onclick="openEditor()">
-                <span class="material-symbols-rounded">
-                    add
-                </span>
-            </a>
-        </div>
-        <div class="scriptcontainer">
-        </div>
-    </main>
-    <div class="editorpopup hide">
-
-        <div class="editorcontainer">
-            <input type="text" placeholder="Script Name" id="scriptname">
-            <div class="editor" id="scriptedior"></div>
-            <div class="icnbtnrow">
-                <a class="icnbtn" data-tippy-content="Cancel" data-tippy-placement="top" onclick="closeEditor()">
-                    <span class="material-symbols-rounded">
-                        close
-                    </span>
-                </a>
-                <a class="icnbtn" data-tippy-content="Save Script" data-tippy-placement="top" onclick="saveEditor()">
-                    <span class="material-symbols-rounded">
-                        save
-                    </span>
-                </a>
-            </div>
-        </div>
+  <main>
+    <div class="topbar">
+      uRun <a class="icnbtn" data-tippy-content="Reset" data-tippy-placement="left" onclick="resetScripts()"><span class="material-symbols-rounded">restart_alt</span></a> <a class="icnbtn" data-tippy-content="Devtools" data-tippy-placement="left" onclick="execute(`(function () { var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda'; document.body.appendChild(script); script.onload = function () { eruda.init() } })();`)"><span class="material-symbols-rounded">code</span></a> <a class="icnbtn" data-tippy-content="Add Script" data-tippy-placement="left" onclick="openEditor()"><span class="material-symbols-rounded">add</span></a>
     </div>
-    <script src="editor.js"></script>
-    <script>
+    <div class="scriptcontainer"></div>
+  </main>
+  <div class="editorpopup hide">
+    <div class="editorcontainer">
+      <input type="text" placeholder="Script Name" id="scriptname">
+      <div class="editor" id="scriptedior"></div>
+      <div class="icnbtnrow">
+        <a class="icnbtn" data-tippy-content="Cancel" data-tippy-placement="top" onclick="closeEditor()"><span class="material-symbols-rounded">close</span></a> <a class="icnbtn" data-tippy-content="Save Script" data-tippy-placement="top" onclick="saveEditor()"><span class="material-symbols-rounded">save</span></a>
+      </div>
+    </div>
+  </div>
+  <script src="editor.js"></script> 
+  <script>
+
+
         function execute(code) {
             window.parent.postMessage("execute:" + code, '*');
         }
@@ -329,7 +299,6 @@
         tippy('[data-tippy-content]', {
             arrow: false
         });
-    </script>
+  </script>
 </body>
-
 </html>
